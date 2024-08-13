@@ -193,40 +193,41 @@ class Management:
 
     # The doctors menu that'll open based on on if you chose choice 1
     def doctors_menu(self):
-        print("\n Doctors Menu: \n 1- Display Doctors List \n 2 - Search for doctor by ID \n 3 - Search for doctor by name \n 4 - Add doctor \n 5 - Edit doctor info \n 6 - Back to the Main Menu  ")
-        choice = input(">>> ")
-        # Displays the enter list of doctors
-        if choice == "1":
-            self.doctor_manager.display_doctors_list()
-        # Displays the information of the specific chosen doctor by ID
-        elif choice == "2":
-            doctor_id = input("Enter the doctor's ID: ")
-            self.doctor_manager.search_doctor_by_id(doctor_id)
-        # Displays the information of a specific chosen doctor by name
-        elif choice == "3":
-            name = input("Please enter the doctor's name: ")
-            self.doctor_manager.search_doctor_by_name(name)
-        # Asks for new doctor's information 
-        elif choice == "4":
-            doctor_id = int(input("Enter this new doctor's ID: "))
-            name = input("Enter the doctor's name: ")
-            specialization = input("Enter the doctor's specility: ")
-            working_time = input("Enter the doctor's timing (e.g., 7am-10pm):")
-            qualification = input("Enter the doctor's qualification:")
-            room_number = input("Enter the doctor's room number: ")
-            self.doctor_manager.add_doctor(doctor_id, name, specialization, working_time, qualification,room_number)
-        # Asks which doctor you'd like to edit, then asks you everything you'd like to edit 
-        elif choice == "5":
-            doctor_id = int(input("Please enter the ID of the doctor you want to edit: "))
-            name = input("Enter new Name: ")
-            specialization = input("Enter new Specialty: ")
-            working_time = input("Enter new Timing: ")
-            qualification = input("Enter new Qualification: ")
-            room_number = int(input("Enter new Room Number: "))
-            self.doctor_manager.edit_doctor(doctor_id, name, specialization, working_time, qualification, room_number)
-            
-        #
-        elif choice == "6":
-        # Fail Safe incase the user decides not to choose from the options
-        else:
-            print("Invalid choice, please choose from 1 to 6!")
+        while True:
+            print("\n Doctors Menu: \n 1- Display Doctors List \n 2 - Search for doctor by ID \n 3 - Search for doctor by name \n 4 - Add doctor \n 5 - Edit doctor info \n 6 - Back to the Main Menu  ")
+            choice = input(">>> ")
+            # Displays the enter list of doctors
+            if choice == "1":
+                self.doctor_manager.display_doctors_list()
+            # Displays the information of the specific chosen doctor by ID
+            elif choice == "2":
+                doctor_id = input("Enter the doctor's ID: ")
+                self.doctor_manager.search_doctor_by_id(doctor_id)
+            # Displays the information of a specific chosen doctor by name
+            elif choice == "3":
+                name = input("Please enter the doctor's name: ")
+                self.doctor_manager.search_doctor_by_name(name)
+            # Asks for new doctor's information 
+            elif choice == "4":
+                doctor_id = int(input("Enter this new doctor's ID: "))
+                name = input("Enter the doctor's name: ")
+                specialization = input("Enter the doctor's specility: ")
+                working_time = input("Enter the doctor's timing (e.g., 7am-10pm):")
+                qualification = input("Enter the doctor's qualification:")
+                room_number = input("Enter the doctor's room number: ")
+                self.doctor_manager.add_doctor(doctor_id, name, specialization, working_time, qualification,room_number)
+            # Asks which doctor you'd like to edit, then asks you everything you'd like to edit 
+            elif choice == "5":
+                doctor_id = int(input("Please enter the ID of the doctor you want to edit: "))
+                name = input("Enter new Name: ")
+                specialization = input("Enter new Specialty: ")
+                working_time = input("Enter new Timing: ")
+                qualification = input("Enter new Qualification: ")
+                room_number = int(input("Enter new Room Number: "))
+                self.doctor_manager.edit_doctor(doctor_id, name, specialization, working_time, qualification, room_number)
+            # A get out option, will bring you back to the main menu
+            elif choice == "6":
+                break
+            # Fail Safe incase the user decides not to choose from the options
+            else:
+                print("Invalid choice, please choose from 1 to 6!")
