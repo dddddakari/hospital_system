@@ -151,7 +151,12 @@ class DoctorManager:
             print("Can't find the doctor with the same name in the system.")
 
     # Adding a new doctor
-    def add_doctor():
+    def add_doctor(self, doctor_id, name, specialization, working_time, qualification, room_number):
+        if doctor_id in self.doctors:
+            print("A Doctor already exists with this ID.")
+        else:
+            self.doctors[doctor_id] = Doctor(doctor_id, name, specialization, working_time, qualification,room_number)
+            print("Doctor whose ID is {doctor_id} has been added.")
     # Editing an existing doctor
     def edit_doctor():
 
@@ -191,8 +196,15 @@ class Management:
         elif choice == "3":
             name = input("Please enter the doctor's name: ")
             self.doctor_manager.search_doctor_by_name(name)
-        # Asks for new doctor's information
+        # Asks for new doctor's information 
         elif choice == "4":
+            doctor_id = int(input("Enter this new doctor's ID: "))
+            name = input("Enter the doctor's name: ")
+            specialization = input("")
+            working_time = input("")
+            qualification = input("")
+            room_number = input("")
+            self.doctor_manager.add_doctor(doctor_id, name, specialization, working_time, qualification,room_number)
         #
         elif choice == "5":
         #
