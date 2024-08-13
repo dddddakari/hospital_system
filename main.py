@@ -235,6 +235,16 @@ class PatientManager:
             self.patients[patient_id] = Patient(patient_id, name, disease,gender,age)
             print(f"Patient whose ID is {patient_id} has been added.")
     # Editing an existing patient
+    def edit_patient(self, patient_id, name, disease, gender, age):
+        patient = self.patients.get(patient_id)
+        if patient:
+            patient.set_name(name)
+            patient.set_disease(disease)
+            patient.set_gender(gender)
+            patient.set_age(age)
+            print(f"Patient whose ID is {patient_id} has been edited.")
+        else:
+            print("Can't find the patient with the same ID in the system.")
 
 class Management:
     # Initializing the Management with the DoctorManager
@@ -322,12 +332,12 @@ class Management:
                 age= input("Enter the Patient's Age: ")
                 self.patient_manager.add_patient(patient_id,name, disease, gender, age)
             elif choice == "4":
-                 patient_id= int(input("Enter the patient's ID: "))
-                name = input("Enter the Patient's name: ")
-                disease = input("Enter the patient's disease: ")
-                gender = input("Enter the Patient's Gender: ")
-                age= input("Enter the Patient's Age: ")
-                self.patient_manager.add_patient(patient_id,name, disease, gender, age)
+                patient_id= int(input("Please enter the ID of the patient you want to edit: "))
+                name = input("Enter New name: ")
+                disease = input("Enter New disease: ")
+                gender = input("Enter New Gender: ")
+                age= input("Enter New Age: ")
+                self.patient_manager.(patient_id,name, disease, gender, age)
             elif choice == "5":
             else:
                 print("Invalid Choice, Please choose from 1 to 5")
