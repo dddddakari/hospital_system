@@ -43,3 +43,29 @@ doctors = {
     }
 }
 
+patients = {
+    12: {
+        "name": "Pankaj",
+        "disease": "Cancer",
+        "gender": "Male",
+        "age": 30
+    },
+    13: {
+        "name": "Sumit",
+        "disease": "Cold",
+        "gender": "Male",
+        "age": 23
+    },
+    14: {
+        "name": "Alok",
+        "disease": "Malaria",
+        "gender": "Male",
+        "age": 45
+    },
+    15: {
+        "name": "Ravi",
+        "disease": "Diabetes",
+        "gender": "Male",
+        "age": 65
+    }
+}
