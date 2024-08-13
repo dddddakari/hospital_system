@@ -114,7 +114,7 @@ class Doctor:
     #The final "string" self
     #!!!! GOOGLE THIS !!!!
     def __str__(self):
-        return f"{self.doctor_id}, {self.get_name()}, {self.get_specialization()}, {self.get_working_time()}, {self.get_qualification()}, {self.get_room_number()}"
+        return f"{self.doctor_id:<5}, {self.name:<15}, {self.specialization:15}, {self.working_time:<15}, {self.qualification:<15}, {self.room_number}"
 
 class DoctorManager:
     #Initializing 'DoctorManager' class with the dictionary of Doctors above
