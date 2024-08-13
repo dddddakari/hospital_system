@@ -130,6 +130,12 @@ class DoctorManager:
     # Searching The Doctor THENNN displaying their details
         # COME BACK TO THIS
     def search_doctor_by_id(self, doctor_id):
+        doctor = self.doctors.get(doctor_id)
+        if doctor:
+            print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER")
+            print(str(doctor))
+        else:
+            print("Can't find the doctor with the same ID in the system.")
 
     # Search for a doctor by name then display their details
     def search_doctor_by_name(self, name):
@@ -160,4 +166,12 @@ class Management:
         choice = input(">>> ")
         if choice == "1":
             self.doctor_manager.display_doctors_list()
-        elif choice ==
+        elif choice == "2":
+            doctor_id = input("Enter the doctor's ID: ")
+            self.doctor_manager.search_doctor_by_id(doctor_id)
+        elif choice == "3":
+        elif choice == "4":
+        elif choice == "5":
+        elif choice == "6":
+        else:
+            print("Invalid choice, please enter 1 to 6.")

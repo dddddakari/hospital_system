@@ -55,18 +55,32 @@ doctors = {
         "room_number": 2
     }
 }
+class DoctorManager:
+    def search_doctor_by_id(self, doctor_id):
+        doctor = self.doctors.get(doctor_id)
+        if doctor:
+            print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER")
+            print(str(doctor))
+        else:
+            print("Can't find the doctor with the same ID in the system.")
 
 class Management:
-    def display_menu(self):
-        print("Welcome to Alberta Hospital (AH) Management system \n Select from the following options, or select 3 to stop: \n 1 -     Doctors \n 2 -     Patients \n 3 -     Exit Program \n")
-        choice = input(">>> ")
-
+   
     def doctors_menu(self):
-        print(f"\n Doctors Menu: \n 1-  Display Doctors List \n 2 - Search for doctor by ID \n 3 - Search for doctor by name \n 4 - Add doctor \n 5 - Edit doctor info \n 6 - Back to the Main Menu  ")
+        print("\n Doctors Menu: \n 1- Display Doctors List \n 2 - Search for doctor by ID \n 3 - Search for doctor by name \n 4 - Add doctor \n 5 - Edit doctor info \n 6 - Back to the Main Menu  ")
         choice = input(">>> ")
+        if choice == "1":
+            self.doctor_manager.display_doctors_list()
+        elif choice == "2":
+            doctor_id = input("Enter the doctor's ID: ")
+            self.doctor_manager.search_doctor_by_id(doctor_id)
+        else:
+            print("Invalid choice, please enter 1 to 6.")
     
 # Testing the DoctorManager class
 if __name__ == "__main__":
     manager = Management()
-    manager.display_menu()
+    manager.doctors_menu()
+
+
  
