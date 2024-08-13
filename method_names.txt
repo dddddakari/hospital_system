@@ -1,0 +1,47 @@
+Doctor Class:
+
+    get_name()
+    set_name(value)
+    get_specialization()
+    set_specialization(value)
+    get_working_time()
+    set_working_time(value)
+    get_qualification()
+    set_qualification(value)
+    get_room_number()
+    set_room_number(value)
+
+DoctorManager Class:
+
+    __init__()
+    display_doctors_list()
+    search_doctor_by_id(doctor_id)
+    search_doctor_by_name(name)
+    add_doctor(doctor_id, name, specialization, working_time, qualification, room_number)
+    edit_doctor(doctor_id, name, specialization, working_time, qualification, room_number)
+
+Patient Class:
+
+    get_name()
+    set_name(value)
+    get_disease()
+    set_disease(value)
+    get_gender()
+    set_gender(value)
+    get_age()
+    set_age(value)
+
+PatientManager Class:
+
+    __init__()
+    display_patients_list()
+    search_patient_by_id(patient_id)
+    add_patient(patient_id, name, disease, gender, age)
+    edit_patient(patient_id, name, disease, gender, age)
+
+Management Class:
+
+    __init__()
+    display_menu()
+    doctors_menu()
+    patients_menu()
