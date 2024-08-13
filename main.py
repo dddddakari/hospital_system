@@ -200,13 +200,14 @@ class Management:
         elif choice == "4":
             doctor_id = int(input("Enter this new doctor's ID: "))
             name = input("Enter the doctor's name: ")
-            specialization = input("")
-            working_time = input("")
-            qualification = input("")
-            room_number = input("")
+            specialization = input("Enter the doctor's specility: ")
+            working_time = input("Enter the doctor's timing (e.g., 7am-10pm):")
+            qualification = input("Enter the doctor's qualification:")
+            room_number = input("Enter the doctor's room number: ")
             self.doctor_manager.add_doctor(doctor_id, name, specialization, working_time, qualification,room_number)
-        #
+        # Asks which doctor you'd like to edit, then asks you everything you'd like to edit 
         elif choice == "5":
+            
         #
         elif choice == "6":
         # Fail Safe incase the user decides not to choose from the options
