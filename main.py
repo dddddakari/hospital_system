@@ -121,6 +121,15 @@ class DoctorManager:
     def __init__(self):
         self.doctors = {id: Doctor(id, **info) for id, info in doctors.items()}
 
+    # Displaying The List of Doctors
+    def display_doctors_list(self):
+        print("")
+        for doctor in self.doctors.valuse():
+            print(str(doctor))
+    # Searching The Doctor THENNN displaying their details
+    # Search for a doctor by name then display their details
+    # Adding a new doctor
+    # Editing an existing doctor
 class Patient:
     
 class PatientManager:
