@@ -74,8 +74,13 @@ patients = {
 
 class Doctor:
     # Initializing a doctor with the attributes mentioned in Dict
-    def __init__(self) -> None:
-        pass
+    def __init__(self,doctor_id, name, specialization, working_tIme, qualification,room_number):
+        self.doctor_id = doctor_id
+        self.name = name
+        self.specialization = specialization
+        self.working_time = working_time
+        self.qualification = qualification
+        self.room_number = room_number
 
 class DoctorManager:
 
