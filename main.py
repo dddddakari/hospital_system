@@ -336,11 +336,13 @@ class Management:
                 disease = input("Enter New disease: ")
                 gender = input("Enter New Gender: ")
                 age= input("Enter New Age: ")
-                self.patient_manager.(patient_id,name, disease, gender, age)
+                self.patient_manager.edit_patient(patient_id,name, disease, gender, age)
             elif choice == "5":
                 break
             else:
                 print("Invalid Choice, Please choose from 1 to 5")
 
 
-        
+if __name__ ==  "__main__":
+   hospital_system = Management()
+   hospital_system.display_menu()
