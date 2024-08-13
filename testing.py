@@ -9,7 +9,7 @@ class Doctor:
         self.room_number = room_number
 
     def __str__(self):
-        return f"{self.doctor_id:<5},  {self.name:<15}, {self.specialization:15} {self.working_time:<15} {self.qualification:<15} {self.room_number}"
+        return f"{self.doctor_id:<5}  {self.name:<15} {self.specialization:15} {self.working_time:<15} {self.qualification:<15} {self.room_number}"
 
 doctors = {
     21: {
@@ -61,7 +61,7 @@ class DoctorManager:
         self.doctors = {id: Doctor(id, **info) for id, info in doctors.items()}
 
     def display_doctors_list(self):
-        print("")
+        print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER")
         for doctor in self.doctors.values():
             print(str(doctor))
 
