@@ -207,27 +207,45 @@ class Patient:
     def __str__(self):
         return f"{self.patient_id:<5} {self.name:<15} {self.disease:15} {self.gender:<15} {self.age:<15}"
 
-    
-# class PatientManager:
+class PatientManager:
+    #Initializing 'PatientManager' class with the dictionary of Patients above
+    def __init__(self):
+        self.patients = {id: Patient(id, **info) for id, info in patients.items()}
+
+    # Display the list of patients
+
+    # Searching for a patient by ID and showing their details
+
+    # Adding a new patient
+
+    # Editing an existing patient
 
 class Management:
     # Initializing the Management with the DoctorManager
     def __init__(self):
+        self.doctors_manager = DoctorManager()
         self.doctors_manager = DoctorManager()
 
     # Displaying the main menu and the choices
     def display_menu(self):
         print("Welcome to Alberta Hospital (AH) Management system \n Select from the following options, or select 3 to stop: \n 1 - Doctors \n 2 - Patients \n 3 - Exit Program \n")
         choice = input(">>> ")
+
         # This leads to the DOCTORS Menu
         if choice =='1':
             self.doctors_menu()
+
+        elif choice == '2':
+            self.patients_menu()
         # This ends the program
         elif choice == '3':
             print("Thanks for using the program. Bye!")
+
         # This is a fail safe incase the user doesn't enter one of the three choices
         else:
             print("Invalid Choice, Please Choose from 1, 2 or 3!")
+
+
 
     # The doctors menu that'll open based on on if you chose choice 1
     def doctors_menu(self):
@@ -269,3 +287,8 @@ class Management:
             # Fail Safe incase the user decides not to choose from the options
             else:
                 print("Invalid choice, please choose from 1 to 6!")
+
+    
+    
+    def patients_menu(self):
+        while True:
