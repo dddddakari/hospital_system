@@ -113,7 +113,7 @@ class Doctor:
 
     #The final "string" self
     #!!!! GOOGLE THIS !!!!
-    def __str__(self);
+    def __str__(self):
         return f"{self.doctor_id}, {self.get_name()}, {self.get_specialization()}, {self.get_working_time()}, {self.get_qualification()}, {self.get_room_number()}"
 
 class DoctorManager:
@@ -126,12 +126,15 @@ class DoctorManager:
         print("")
         for doctor in self.doctors.valuse():
             print(str(doctor))
+
+    
     # Searching The Doctor THENNN displaying their details
     # Search for a doctor by name then display their details
     # Adding a new doctor
     # Editing an existing doctor
-class Patient:
-    
-class PatientManager:
 
-class Management:
+# class Patient:
+    
+# class PatientManager:
+
+# class Management:
