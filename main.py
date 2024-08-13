@@ -151,27 +151,42 @@ class DoctorManager:
 
 class Management:
 
+
+    # Displaying the main menu and the choices
     def display_menu(self):
         print("Welcome to Alberta Hospital (AH) Management system \n Select from the following options, or select 3 to stop: \n 1 - Doctors \n 2 - Patients \n 3 - Exit Program \n")
         choice = input(">>> ")
+        # This leads to the DOCTORS Menu
         if choice =='1':
             self.doctors_menu()
+        # This ends the program
         elif choice == '3':
             print("Thanks for using the program. Bye!")
+        # This is a fail safe incase the user doesn't enter one of the three choices
         else:
             print("Invalid Choice, Please Choose from 1, 2 or 3!")
 
+    # The doctors menu that'll open based on on if you chose choice 1
     def doctors_menu(self):
         print("\n Doctors Menu: \n 1- Display Doctors List \n 2 - Search for doctor by ID \n 3 - Search for doctor by name \n 4 - Add doctor \n 5 - Edit doctor info \n 6 - Back to the Main Menu  ")
         choice = input(">>> ")
+        # Displays the enter list of doctors
         if choice == "1":
             self.doctor_manager.display_doctors_list()
+        # Displays the information of the specific chosen doctor by ID
         elif choice == "2":
             doctor_id = input("Enter the doctor's ID: ")
             self.doctor_manager.search_doctor_by_id(doctor_id)
+        # Displays the information of a specific chosen doctor by name
         elif choice == "3":
+            name = input("Please enter the doctor's name: ")
+            self.doctor_manager.search_doctor_by_na
+        #
         elif choice == "4":
+        #
         elif choice == "5":
+        #
         elif choice == "6":
+        # Fail Safe incase the user decides not to choose from the options
         else:
-            print("Invalid choice, please enter 1 to 6.")
+            print("Invalid choice, please choose from 1 to 6!")
