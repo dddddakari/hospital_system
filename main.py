@@ -179,16 +179,29 @@ class Patient:
         self.gender = gender
         self.age = age 
 
-    # Getter and Setters for Patient's 
+    # Getter and Setters for Patient's name
+    def get_name(self):
+        return self.name
+    def set_name(self, value):
+        self.name = value 
 
+    # Getter and Setters for Patient's disease
+    def get_disease(self):
+        return self.disease
+    def set_disease(self, value):
+        self.disease = value
 
-    # Getter and Setters for Patient's 
+    # Getter and Setters for Patient's gender
+    def get_gender(self):
+        return self.gender
+    def set_gender(self, value)
+        self.gender = value
 
-
-    # Getter and Setters for Patient's 
-
-
-    # Getter and Setters for Patient's 
+    # Getter and Setters for Patient's age
+    def get_age(self):
+        return self.age
+    def set_age(self, value):
+        self.age = value
 
     
 # class PatientManager:
