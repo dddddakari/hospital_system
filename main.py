@@ -107,14 +107,14 @@ class Doctor:
 
     # Getter and Setter for Doctor's room number
     def get_room_number(self):
-        self.room_number
+       return self.room_number
     def set_room_number(self, value):
         self.room_number= value
 
     #The final "string" self
     #!!!! GOOGLE THIS !!!!
     def __str__(self):
-        return f"{self.doctor_id:<5} {self.name():<15} {self.specialization():15} {self.working_time():<15} {self.qualification():<15} {self.room_number()}"
+        return f"{self.doctor_id:<5} {self.get_name:<15} {self.get_specialization:15} {self.get_working_time:<15} {self.get_qualification:<15} {self.get_room_number}"
 
 class DoctorManager:
     #Initializing 'DoctorManager' class with the dictionary of Doctors above
@@ -130,6 +130,8 @@ class DoctorManager:
     # Searching The Doctor THENNN displaying their details
         # COME BACK TO THIS
     def search_doctor_by_id(self, doctor_id):
+        print(f"Searching for doctor ID: {doctor_id}") 
+        doctor_id = int(doctor_id) # Converting the input to integer as I keep getting errors
         doctor = self.doctors.get(doctor_id)
         if doctor:
             print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER\n")
@@ -205,7 +207,7 @@ class Patient:
 
     # String Representation of the patient
     def __str__(self):
-        return f"{self.patient_id:<5} {self.name():<15} {self.disease():15} {self.gender():<15} {self.age():<15}"
+        return f"{self.patient_id:<5} {self.get_name():<15} {self.get_disease():15} {self.get_gender():<15} {self.get_age():<15}"
 
 class PatientManager:
     #Initializing 'PatientManager' class with the dictionary of Patients above
@@ -220,6 +222,7 @@ class PatientManager:
 
     # Searching for a patient by ID and showing their details
     def search_patient_by_id(self, patient_id):
+        patient_id = int(patient_id) # Coverting to integer to solve error
         patient = self.patients.get(patient_id)
         if patient: 
             print("ID    NAME           DISEASE          GENDER          AGE")
@@ -249,27 +252,26 @@ class PatientManager:
 class Management:
     # Initializing the Management with the DoctorManager
     def __init__(self):
-        self.doctors_manager = DoctorManager()
-        self.patients_manager = PatientManager()
+        self.doctor_manager = DoctorManager()
+        self.patient_manager = PatientManager()
 
     # Displaying the main menu and the choices
     def display_menu(self):
-        print("Welcome to Alberta Hospital (AH) Management system \n Select from the following options, or select 3 to stop: \n 1 - Doctors \n 2 - Patients \n 3 - Exit Program \n")
-        choice = input(">>> ")
-
-        # This leads to the DOCTORS Menu
-        if choice =="1":
-            self.doctors_menu()
-        # This leads to the PATIENTS menu
-        elif choice == "2":
-            self.patients_menu()
-        # This ends the program
-        elif choice == "3":
-            print("Thanks for using the program. Bye!")
-
-        # This is a fail safe incase the user doesn't enter one of the three choices
-        else:
-            print("Invalid Choice, Please Choose from 1, 2 or 3!")
+        while True:
+            print("Welcome to Alberta Hospital (AH) Management system \n Select from the following options, or select 3 to stop: \n 1 - Doctors \n 2 - Patients \n 3 - Exit Program \n")
+            choice = input(">>> ")
+            # This leads to the DOCTORS Menu
+            if choice =="1":
+                self.doctors_menu()
+            # This leads to the PATIENTS menu
+            elif choice == "2":
+                self.patients_menu()
+            # This ends the program
+            elif choice == "3":
+                print("Thanks for using the program. Bye!")
+                break
+            else:
+                print("Invalid Choice, Please Choose from 1, 2 or 3!")     # This is a fail safe incase the user doesn't enter one of the three choices
 
 
     # The doctors menu that'll open based on on if you chose choice 1
@@ -279,10 +281,10 @@ class Management:
             choice = input(">>> ")
             # Displays the enter list of doctors
             if choice == "1":
-                self.doctor_manager.display_doctors_list()
+                self.doctors_manager.display_doctors_list()
             # Displays the information of the specific chosen doctor by ID
             elif choice == "2":
-                doctor_id = input("Enter the doctor's ID: ")
+                doctor_id = int(input("Enter the doctor's ID: ")) # Converting to interger to avoid confusing the computer
                 self.doctor_manager.search_doctor_by_id(doctor_id)
             # Displays the information of a specific chosen doctor by name
             elif choice == "3":
@@ -319,23 +321,23 @@ class Management:
             print("Patients Menu \n 1 - Display Patients list \n 2 - Search for patient by ID \n 3 - Add patient \n 4 - Edit patient info \n 5 - Back to the Main Menu \n")
             choice = input(">>>")
             if choice == "1":
-                self.patients_manager.display_patients_list()
+                self.patient_manager.display_patients_list()
             elif choice == "2":
                 patient_id = int(input("Enter the patient ID: "))
-                self.patients_manager.search_patient_by_id(patient_id)
+                self.patient_manager.search_patient_by_id(patient_id)
             elif choice == "3":
                 patient_id= int(input("Enter the patient's ID: "))
                 name = input("Enter the Patient's name: ")
                 disease = input("Enter the patient's disease: ")
                 gender = input("Enter the Patient's Gender: ")
-                age= input("Enter the Patient's Age: ")
+                age= int(input("Enter the Patient's Age: ")) # Converting to int to avoid confusion
                 self.patient_manager.add_patient(patient_id,name, disease, gender, age)
             elif choice == "4":
                 patient_id= int(input("Please enter the ID of the patient you want to edit: "))
                 name = input("Enter New name: ")
                 disease = input("Enter New disease: ")
                 gender = input("Enter New Gender: ")
-                age= input("Enter New Age: ")
+                age= int(input("Enter New Age: ")) # Converting to int to avoid confusion2
                 self.patient_manager.edit_patient(patient_id,name, disease, gender, age)
             elif choice == "5":
                 break
