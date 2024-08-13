@@ -228,7 +228,12 @@ class PatientManager:
             print("Can't find the patient with the same ID in the system.")
 
     # Adding a new patient
-
+    def add_patient(self, patient_id, name, disease, gender, age):
+        if patient_id in self.patients:
+            print("Patient with this ID already exists.")
+        else:
+            self.patients[patient_id] = Patient(patient_id, name, disease,gender,age)
+            print(f"Patient whose ID is {patient_id} has been added.")
     # Editing an existing patient
 
 class Management:
@@ -310,7 +315,19 @@ class Management:
                 patient_id = int(input("Enter the patient ID: "))
                 self.patients_manager.search_patient_by_id(patient_id)
             elif choice == "3":
+                patient_id= int(input("Enter the patient's ID: "))
+                name = input("Enter the Patient's name: ")
+                disease = input("Enter the patient's disease: ")
+                gender = input("Enter the Patient's Gender: ")
+                age= input("Enter the Patient's Age: ")
+                self.patient_manager.add_patient(patient_id,name, disease, gender, age)
             elif choice == "4":
+                 patient_id= int(input("Enter the patient's ID: "))
+                name = input("Enter the Patient's name: ")
+                disease = input("Enter the patient's disease: ")
+                gender = input("Enter the Patient's Gender: ")
+                age= input("Enter the Patient's Age: ")
+                self.patient_manager.add_patient(patient_id,name, disease, gender, age)
             elif choice == "5":
             else:
                 print("Invalid Choice, Please choose from 1 to 5")
