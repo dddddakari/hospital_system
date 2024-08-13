@@ -89,8 +89,13 @@ class Doctor:
         self.name = value  
 
     # Getter and Setter for Doctor's specialization
+    def get_specialization(self):
+        return self.specialization
+    def set_specialization(self, value):
+        self.specialization = value
 
     # Getter and Setter for Doctor's working time
+    def get_working_time(self):
 
     # Getter and Setter for Doctor's qualification
 
