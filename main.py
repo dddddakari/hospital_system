@@ -194,7 +194,7 @@ class Patient:
     # Getter and Setters for Patient's gender
     def get_gender(self):
         return self.gender
-    def set_gender(self, value)
+    def set_gender(self, value):
         self.gender = value
 
     # Getter and Setters for Patient's age
@@ -202,6 +202,10 @@ class Patient:
         return self.age
     def set_age(self, value):
         self.age = value
+
+    # String Representation of the patient
+    def __str__(self):
+        return f"{self.patient_id:<5} {self.name:<15} {self.disease:15} {self.gender:<15} {self.age:<15}"
 
     
 # class PatientManager:
