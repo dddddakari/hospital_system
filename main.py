@@ -73,7 +73,7 @@ patients = {
 
 class Doctor:
     # Initializing a doctor with the attributes mentioned in Dict
-    def __init__(self,doctor_id, name, specialization, working_tIme, qualification,room_number):
+    def __init__(self,doctor_id, name, specialization, working_time, qualification,room_number):
         self.doctor_id = doctor_id
         self.name = name
         self.specialization = specialization
@@ -114,7 +114,7 @@ class Doctor:
     #The final "string" self
     #!!!! GOOGLE THIS !!!!
     def __str__(self):
-        return f"{self.doctor_id:<5} {self.name:<15} {self.specialization:15} {self.working_time:<15} {self.qualification:<15} {self.room_number}"
+        return f"{self.doctor_id:<5} {self.name():<15} {self.specialization():15} {self.working_time():<15} {self.qualification():<15} {self.room_number()}"
 
 class DoctorManager:
     #Initializing 'DoctorManager' class with the dictionary of Doctors above
@@ -123,7 +123,7 @@ class DoctorManager:
 
     # Displaying The List of Doctors
     def display_doctors_list(self):
-        print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER")
+        print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER\n")
         for doctor in self.doctors.values():
             print(str(doctor))
     
@@ -132,7 +132,7 @@ class DoctorManager:
     def search_doctor_by_id(self, doctor_id):
         doctor = self.doctors.get(doctor_id)
         if doctor:
-            print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER")
+            print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER\n")
             print(str(doctor))
         else:
             print("Can't find the doctor with the same ID in the system.")
@@ -141,7 +141,7 @@ class DoctorManager:
     def search_doctor_by_name(self, name):
         # As to make sure the results are searched and displayed otherwise
         found = False
-        print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER")
+        print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER\n")
         # Searching through the dictionary values for the specific name
         for doctor in self.doctors.values():
             if doctor.get_name() == name:
@@ -156,7 +156,7 @@ class DoctorManager:
             print("A Doctor already exists with this ID.")
         else:
             self.doctors[doctor_id] = Doctor(doctor_id, name, specialization, working_time, qualification,room_number)
-            print("Doctor whose ID is {doctor_id} has been added.")
+            print(f"Doctor whose ID is {doctor_id} has been added.")
     # Editing an existing doctor
     def edit_doctor(self, doctor_id, name, specialization, working_time, qualification, room_number):
         doctor = self.doctors.get(doctor_id)
@@ -205,29 +205,72 @@ class Patient:
 
     # String Representation of the patient
     def __str__(self):
-        return f"{self.patient_id:<5} {self.name:<15} {self.disease:15} {self.gender:<15} {self.age:<15}"
+        return f"{self.patient_id:<5} {self.name():<15} {self.disease():15} {self.gender():<15} {self.age():<15}"
 
-    
-# class PatientManager:
+class PatientManager:
+    #Initializing 'PatientManager' class with the dictionary of Patients above
+    def __init__(self):
+        self.patients = {id: Patient(id, **info) for id, info in patients.items()}
+
+     # Display the list of patients
+    def display_patients_list(self):
+        print("ID    NAME           DISEASE          GENDER          AGE")
+        for patient in self.patients.values():
+            print(str(patient))
+
+    # Searching for a patient by ID and showing their details
+    def search_patient_by_id(self, patient_id):
+        patient = self.patients.get(patient_id)
+        if patient: 
+            print("ID    NAME           DISEASE          GENDER          AGE")
+            print(str(patient))
+        else:
+            print("Can't find the patient with the same ID in the system.")
+
+    # Adding a new patient
+    def add_patient(self, patient_id, name, disease, gender, age):
+        if patient_id in self.patients:
+            print("Patient with this ID already exists.")
+        else:
+            self.patients[patient_id] = Patient(patient_id, name, disease,gender,age)
+            print(f"Patient whose ID is {patient_id} has been added.")
+    # Editing an existing patient
+    def edit_patient(self, patient_id, name, disease, gender, age):
+        patient = self.patients.get(patient_id)
+        if patient:
+            patient.set_name(name)
+            patient.set_disease(disease)
+            patient.set_gender(gender)
+            patient.set_age(age)
+            print(f"Patient whose ID is {patient_id} has been edited.")
+        else:
+            print("Can't find the patient with the same ID in the system.")
 
 class Management:
     # Initializing the Management with the DoctorManager
     def __init__(self):
         self.doctors_manager = DoctorManager()
+        self.patients_manager = PatientManager()
 
     # Displaying the main menu and the choices
     def display_menu(self):
         print("Welcome to Alberta Hospital (AH) Management system \n Select from the following options, or select 3 to stop: \n 1 - Doctors \n 2 - Patients \n 3 - Exit Program \n")
         choice = input(">>> ")
+
         # This leads to the DOCTORS Menu
-        if choice =='1':
+        if choice =="1":
             self.doctors_menu()
+        # This leads to the PATIENTS menu
+        elif choice == "2":
+            self.patients_menu()
         # This ends the program
-        elif choice == '3':
+        elif choice == "3":
             print("Thanks for using the program. Bye!")
+
         # This is a fail safe incase the user doesn't enter one of the three choices
         else:
             print("Invalid Choice, Please Choose from 1, 2 or 3!")
+
 
     # The doctors menu that'll open based on on if you chose choice 1
     def doctors_menu(self):
@@ -269,3 +312,35 @@ class Management:
             # Fail Safe incase the user decides not to choose from the options
             else:
                 print("Invalid choice, please choose from 1 to 6!")
+
+    # The Patient's Menu that'll open based on if you chose choice 2
+    def patients_menu(self):
+        while True:
+            print("Patients Menu \n 1 - Display Patients list \n 2 - Search for patient by ID \n 3 - Add patient \n 4 - Edit patient info \n 5 - Back to the Main Menu \n")
+            choice = input(">>>")
+            if choice == "1":
+                self.patients_manager.display_patients_list()
+            elif choice == "2":
+                patient_id = int(input("Enter the patient ID: "))
+                self.patients_manager.search_patient_by_id(patient_id)
+            elif choice == "3":
+                patient_id= int(input("Enter the patient's ID: "))
+                name = input("Enter the Patient's name: ")
+                disease = input("Enter the patient's disease: ")
+                gender = input("Enter the Patient's Gender: ")
+                age= input("Enter the Patient's Age: ")
+                self.patient_manager.add_patient(patient_id,name, disease, gender, age)
+            elif choice == "4":
+                patient_id= int(input("Please enter the ID of the patient you want to edit: "))
+                name = input("Enter New name: ")
+                disease = input("Enter New disease: ")
+                gender = input("Enter New Gender: ")
+                age= input("Enter New Age: ")
+                self.patient_manager.(patient_id,name, disease, gender, age)
+            elif choice == "5":
+                break
+            else:
+                print("Invalid Choice, Please choose from 1 to 5")
+
+
+        
