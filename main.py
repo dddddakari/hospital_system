@@ -96,8 +96,15 @@ class Doctor:
 
     # Getter and Setter for Doctor's working time
     def get_working_time(self):
+        return self.working_time
+    def set_working_time(self, value):
+        self.working_time =value
 
     # Getter and Setter for Doctor's qualification
+    def get_qualification(self):
+        return self.qualification
+    def set_qualification(self, value):
+        self.qualification = value
 
     # Getter and Setter for Doctor's room number
 
