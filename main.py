@@ -213,8 +213,10 @@ class PatientManager:
         self.patients = {id: Patient(id, **info) for id, info in patients.items()}
 
     # Display the list of patients
-    
-
+    def display_patients_list(self):
+        print("ID   NAME               DISEASE          GENDER           AGE")
+        for patient in self.patients.values():
+            print(str(patient))
     # Searching for a patient by ID and showing their details
 
     # Adding a new patient
@@ -225,7 +227,7 @@ class Management:
     # Initializing the Management with the DoctorManager
     def __init__(self):
         self.doctors_manager = DoctorManager()
-        self.doctors_manager = DoctorManager()
+        self.patients_manager = PatientManager()
 
     # Displaying the main menu and the choices
     def display_menu(self):
@@ -295,6 +297,7 @@ class Management:
             print("Patients Menu \n 1 - Display Patients list \n 2 - Search for patient by ID \n 3 - Add patient \n 4 - Edit patient info \n 5 - Back to the Main Menu \n")
             choice = input(">>>")
             if choice == "1":
+                self.patients_manager.display_patients_list()
             elif choice == "2":
             elif choice == "3":
             elif choice == "4":
