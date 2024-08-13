@@ -1,0 +1,229 @@
+PS C:\Users\icogn\Documents\GitHub\finalproject> & C:/Users/icogn/AppData/Local/Microsoft/WindowsApps/python3.12.exe c:/Users/icogn/Documents/GitHub/finalproject/main.py
+
+ Welcome to Alberta Hospital (AH) Management system      
+ Select from the following options, or select 3 to stop: 
+ 1 - Doctors 
+ 2 - Patients 
+ 3 - Exit Program
+>>> 1
+
+ Doctors Menu: 
+ 1- Display Doctors List 
+ 2 - Search for doctor by ID
+ 3 - Search for doctor by name
+ 4 - Add doctor
+ 5 - Edit doctor info
+ 6 - Back to the Main Menu
+>>> 1
+
+ID    NAME          SPECIALITY       TIMING         QUALIFICATION   ROOM NUMBER
+
+21    Dr.Gody         ENT             5am-11am        MBBS,MD         17
+32    Dr.Vikram       Physician       10am-3pm        MBBS,MD         45
+17    Dr.Amy          Surgeon         8am-2pm         BDM             8
+33    Dr.David        Artho           10am-4pm        MBBS,MS         40
+123   Dr.Ross         Headaches       8am-10am        Mst             102
+66    Dr.Mike         Heart           9am-5pm         MS              2
+
+ Doctors Menu:
+ 1- Display Doctors List
+ 2 - Search for doctor by ID
+ 3 - Search for doctor by name
+ 4 - Add doctor
+ 5 - Edit doctor info
+ 6 - Back to the Main Menu
+>>> 2
+
+ Enter the doctor's ID: 66
+
+ID    NAME           SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER
+
+66    Dr.Mike         Heart           9am-5pm         MS              2
+
+ Doctors Menu:
+ 1- Display Doctors List
+ 2 - Search for doctor by ID
+ 3 - Search for doctor by name
+ 4 - Add doctor
+ 5 - Edit doctor info
+ 6 - Back to the Main Menu
+>>> 3
+
+ Please enter the doctor's name: Dr.David
+
+ID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER
+
+33    Dr.David        Artho           10am-4pm        MBBS,MS         40
+
+ Doctors Menu:
+ 1- Display Doctors List
+ 2 - Search for doctor by ID
+ 3 - Search for doctor by name
+ 4 - Add doctor
+ 5 - Edit doctor info
+ 6 - Back to the Main Menu
+>>> 2
+
+ Enter the doctor's ID: 20
+Can't find the doctor with the same ID in the system.
+
+ Doctors Menu:
+ 1- Display Doctors List
+ 2 - Search for doctor by ID
+ 3 - Search for doctor by name
+ 4 - Add doctor
+ 5 - Edit doctor info
+ 6 - Back to the Main Menu
+>>> 3
+
+ Please enter the doctor's name: Dr. Tom
+Can't find the doctor with the same name in the system.
+
+ Doctors Menu:
+ 1- Display Doctors List
+ 2 - Search for doctor by ID
+ 3 - Search for doctor by name
+ 4 - Add doctor
+ 5 - Edit doctor info
+ 6 - Back to the Main Menu
+>>> 4
+
+Enter this new doctor's ID: 62
+Enter the doctor's name: Dr. Smith
+Enter the doctor's specility: Heart
+Enter the doctor's timing (e.g., 7am-10pm):6am-11am
+Enter the doctor's qualification:PHD
+Enter the doctor's room number: 12
+
+ Doctor whose ID is 62 has been added.
+
+ Doctors Menu:
+ 1- Display Doctors List
+ 2 - Search for doctor by ID
+ 3 - Search for doctor by name
+ 4 - Add doctor
+ 5 - Edit doctor info
+ 6 - Back to the Main Menu
+>>> 5
+
+ Please enter the ID of the doctor you want to edit: 66
+Enter new Name: Dr Mike Kale 
+Enter new Specialty: Heart
+Enter new Timing: 9am-3pm
+Enter new Qualification: MS
+Enter new Room Number: 2
+
+ Doctor whose ID is 66 has been edited.
+
+ Doctors Menu:
+ 1- Display Doctors List
+ 2 - Search for doctor by ID
+ 3 - Search for doctor by name
+ 4 - Add doctor
+ 5 - Edit doctor info
+ 6 - Back to the Main Menu
+>>> 6
+
+ Welcome to Alberta Hospital (AH) Management system
+ Select from the following options, or select 3 to stop:
+ 1 - Doctors
+ 2 - Patients
+ 3 - Exit Program
+>>> 2
+
+ Patients Menu
+ 1 - Display Patients list
+ 2 - Search for patient by ID
+ 3 - Add patient
+ 4 - Edit patient info
+ 5 - Back to the Main Menu
+>>> 1
+ID    NAME           DISEASE          GENDER          AGE
+12    Pankaj          Cancer          Male            30
+13    Sumit           Cold            Male            23
+14    Alok            Malaria         Male            45
+15    Ravi            Diabetes        Male            65
+
+ Patients Menu
+ 1 - Display Patients list
+ 2 - Search for patient by ID
+ 3 - Add patient
+ 4 - Edit patient info
+ 5 - Back to the Main Menu
+>>> 2
+Enter the patient ID: 16
+Can't find the patient with the same ID in the system.
+
+ Patients Menu
+ 1 - Display Patients list
+ 2 - Search for patient by ID
+ 3 - Add patient
+ 4 - Edit patient info
+ 5 - Back to the Main Menu
+>>> 2
+Enter the patient ID: 15
+ID    NAME           DISEASE          GENDER          AGE
+15    Ravi            Diabetes        Male            65
+
+ Patients Menu
+ 1 - Display Patients list
+ 2 - Search for patient by ID
+ 3 - Add patient
+ 4 - Edit patient info
+ 5 - Back to the Main Menu
+>>> 3
+Enter the patient's ID: 16
+Enter the Patient's name: Mary
+Enter the patient's disease: Cancer
+Enter the Patient's Gender: Female
+Enter the Patient's Age: 55
+
+Patient whose ID is 16 has been added.
+
+
+ Patients Menu
+ 1 - Display Patients list
+ 2 - Search for patient by ID
+ 3 - Add patient
+ 4 - Edit patient info
+ 5 - Back to the Main Menu
+>>> 4
+Please enter the ID of the patient you want to edit: 13
+Enter New name: Janina
+Enter New disease: Cold&Flue
+Enter New Gender: Female
+Enter New Age: 23
+
+Patient whose ID is 13 has been edited.
+
+
+ Patients Menu
+ 1 - Display Patients list
+ 2 - Search for patient by ID
+ 3 - Add patient
+ 4 - Edit patient info
+ 5 - Back to the Main Menu
+>>> 1
+ID    NAME           DISEASE          GENDER          AGE
+12    Pankaj          Cancer          Male            30
+13    Janina          Cold&Flue       Female          23
+14    Alok            Malaria         Male            45
+15    Ravi            Diabetes        Male            65
+16    Mary            Cancer          Female          55
+
+ Patients Menu
+ 1 - Display Patients list
+ 2 - Search for patient by ID
+ 3 - Add patient
+ 4 - Edit patient info
+ 5 - Back to the Main Menu
+>>> 5
+
+ Welcome to Alberta Hospital (AH) Management system
+ Select from the following options, or select 3 to stop:
+ 1 - Doctors
+ 2 - Patients
+ 3 - Exit Program
+>>> 3
+Thanks for using the program. Bye!
+PS C:\Users\icogn\Documents\GitHub\finalproject> 

@@ -123,18 +123,17 @@ class DoctorManager:
 
     # Displaying The List of Doctors
     def display_doctors_list(self):
-        print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER\n")
+        print("\nID    NAME          SPECIALITY       TIMING         QUALIFICATION   ROOM NUMBER\n")
         for doctor in self.doctors.values():
             print(str(doctor))
     
     # Searching The Doctor THENNN displaying their details
         # COME BACK TO THIS
     def search_doctor_by_id(self, doctor_id):
-        print(f"Searching for doctor ID: {doctor_id}") 
         doctor_id = int(doctor_id) # Converting the input to integer as I keep getting errors
         doctor = self.doctors.get(doctor_id)
         if doctor:
-            print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER\n")
+            print("\nID    NAME           SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER\n")
             print(str(doctor))
         else:
             print("Can't find the doctor with the same ID in the system.")
@@ -143,10 +142,10 @@ class DoctorManager:
     def search_doctor_by_name(self, name):
         # As to make sure the results are searched and displayed otherwise
         found = False
-        print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER\n")
         # Searching through the dictionary values for the specific name
         for doctor in self.doctors.values():
             if doctor.get_name() == name:
+                print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER\n")
                 print(str(doctor))
                 found = True
         if not found:
@@ -158,7 +157,7 @@ class DoctorManager:
             print("A Doctor already exists with this ID.")
         else:
             self.doctors[doctor_id] = Doctor(doctor_id, name, specialization, working_time, qualification,room_number)
-            print(f"Doctor whose ID is {doctor_id} has been added.")
+            print(f"\n Doctor whose ID is {doctor_id} has been added.")
     # Editing an existing doctor
     def edit_doctor(self, doctor_id, name, specialization, working_time, qualification, room_number):
         doctor = self.doctors.get(doctor_id)
@@ -168,7 +167,7 @@ class DoctorManager:
             doctor.set_working_time(working_time)
             doctor.set_qualification(qualification)
             doctor.set_room_number(room_number)
-            print(f"Doctor whose ID is {doctor_id} has been edited.")
+            print(f"\n Doctor whose ID is {doctor_id} has been edited.")
         else:
             print("Can't find the doctor with the same ID in the system.")
 
@@ -236,7 +235,7 @@ class PatientManager:
             print("Patient with this ID already exists.")
         else:
             self.patients[patient_id] = Patient(patient_id, name, disease,gender,age)
-            print(f"Patient whose ID is {patient_id} has been added.")
+            print(f"\nPatient whose ID is {patient_id} has been added.\n")
     # Editing an existing patient
     def edit_patient(self, patient_id, name, disease, gender, age):
         patient = self.patients.get(patient_id)
@@ -245,7 +244,7 @@ class PatientManager:
             patient.set_disease(disease)
             patient.set_gender(gender)
             patient.set_age(age)
-            print(f"Patient whose ID is {patient_id} has been edited.")
+            print(f"\nPatient whose ID is {patient_id} has been edited.\n")
         else:
             print("Can't find the patient with the same ID in the system.")
 
@@ -258,7 +257,7 @@ class Management:
     # Displaying the main menu and the choices
     def display_menu(self):
         while True:
-            print("Welcome to Alberta Hospital (AH) Management system \n Select from the following options, or select 3 to stop: \n 1 - Doctors \n 2 - Patients \n 3 - Exit Program \n")
+            print("\n Welcome to Alberta Hospital (AH) Management system \n Select from the following options, or select 3 to stop: \n 1 - Doctors \n 2 - Patients \n 3 - Exit Program")
             choice = input(">>> ")
             # This leads to the DOCTORS Menu
             if choice =="1":
@@ -284,15 +283,15 @@ class Management:
                 self.doctor_manager.display_doctors_list()
             # Displays the information of the specific chosen doctor by ID
             elif choice == "2":
-                doctor_id = int(input("Enter the doctor's ID: ")) # Converting to interger to avoid confusing the computer
+                doctor_id = int(input("\n Enter the doctor's ID: ")) # Converting to interger to avoid confusing the computer
                 self.doctor_manager.search_doctor_by_id(doctor_id)
             # Displays the information of a specific chosen doctor by name
             elif choice == "3":
-                name = input("Please enter the doctor's name: ")
+                name = input("\n Please enter the doctor's name: ")
                 self.doctor_manager.search_doctor_by_name(name)
             # Asks for new doctor's information 
             elif choice == "4":
-                doctor_id = int(input("Enter this new doctor's ID: "))
+                doctor_id = int(input("\nEnter this new doctor's ID: "))
                 name = input("Enter the doctor's name: ")
                 specialization = input("Enter the doctor's specility: ")
                 working_time = input("Enter the doctor's timing (e.g., 7am-10pm):")
@@ -301,7 +300,7 @@ class Management:
                 self.doctor_manager.add_doctor(doctor_id, name, specialization, working_time, qualification,room_number)
             # Asks which doctor you'd like to edit, then asks you everything you'd like to edit 
             elif choice == "5":
-                doctor_id = int(input("Please enter the ID of the doctor you want to edit: "))
+                doctor_id = int(input("\n Please enter the ID of the doctor you want to edit: "))
                 name = input("Enter new Name: ")
                 specialization = input("Enter new Specialty: ")
                 working_time = input("Enter new Timing: ")
@@ -318,8 +317,8 @@ class Management:
     # The Patient's Menu that'll open based on if you chose choice 2
     def patients_menu(self):
         while True:
-            print("Patients Menu \n 1 - Display Patients list \n 2 - Search for patient by ID \n 3 - Add patient \n 4 - Edit patient info \n 5 - Back to the Main Menu \n")
-            choice = input(">>>")
+            print("\n Patients Menu \n 1 - Display Patients list \n 2 - Search for patient by ID \n 3 - Add patient \n 4 - Edit patient info \n 5 - Back to the Main Menu")
+            choice = input(">>> ")
             if choice == "1":
                 self.patient_manager.display_patients_list()
             elif choice == "2":
