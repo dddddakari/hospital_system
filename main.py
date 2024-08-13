@@ -71,7 +71,6 @@ patients = {
     }
 }
 
-
 class Doctor:
     # Initializing a doctor with the attributes mentioned in Dict
     def __init__(self,doctor_id, name, specialization, working_tIme, qualification,room_number):
@@ -113,10 +112,14 @@ class Doctor:
         self.room_number= value
 
     #The final "string" self
+    #!!!! GOOGLE THIS !!!!
     def __str__(self);
         return f"{self.doctor_id}, {self.get_name()}, {self.get_specialization()}, {self.get_working_time()}, {self.get_qualification()}, {self.get_room_number()}"
 
 class DoctorManager:
+    #Initializing 'DoctorManager' class with the dictionary of Doctors above
+    def __init__(self):
+        self.doctors = {id: Doctor(id, **info) for id, info in doctors.items()}
 
 class Patient:
     
