@@ -9,7 +9,7 @@ class Doctor:
         self.room_number = room_number
 
     def __str__(self):
-        return f"{self.doctor_id}   {self.name} {self.specialization} {self.working_time} {self.qualification} {self.room_number}"
+        return f"{self.doctor_id:<40}   {self.name} {self.specialization} {self.working_time} {self.qualification} {self.room_number}"
 
 doctors = {
     21: {
