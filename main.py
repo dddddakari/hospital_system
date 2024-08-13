@@ -170,12 +170,15 @@ class DoctorManager:
         else:
             print("Can't find the doctor with the same ID in the system.")
 
-# class Patient:
+class Patient:
+
     
 # class PatientManager:
 
 class Management:
-
+    # Initializing the Management with the DoctorManager
+    def __init__(self):
+        self.doctors_manager = DoctorManager()
 
     # Displaying the main menu and the choices
     def display_menu(self):
