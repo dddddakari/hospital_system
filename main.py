@@ -171,6 +171,24 @@ class DoctorManager:
             print("Can't find the doctor with the same ID in the system.")
 
 class Patient:
+    # Initializing Patients with required attributes
+    def __init__(self, patient_id, name, disease, gender, age):
+        self.patient_id = patient_id
+        self.name = name
+        self.disease = disease
+        self.gender = gender
+        self.age = age 
+
+    # Getter and Setters for Patient's 
+
+
+    # Getter and Setters for Patient's 
+
+
+    # Getter and Setters for Patient's 
+
+
+    # Getter and Setters for Patient's 
 
     
 # class PatientManager:
