@@ -114,7 +114,7 @@ class Doctor:
     #The final "string" self
     #!!!! GOOGLE THIS !!!!
     def __str__(self):
-        return f"{self.doctor_id:<5} {self.get_name:<15} {self.get_specialization:15} {self.get_working_time:<15} {self.get_qualification:<15} {self.get_room_number}"
+        return f"{self.doctor_id:<5} {self.get_name():<15} {self.get_specialization():15} {self.get_working_time():<15} {self.get_qualification():<15} {self.get_room_number()}"
 
 class DoctorManager:
     #Initializing 'DoctorManager' class with the dictionary of Doctors above
@@ -168,7 +168,7 @@ class DoctorManager:
             doctor.set_working_time(working_time)
             doctor.set_qualification(qualification)
             doctor.set_room_number(room_number)
-            print("Doctor whose ID is {doctor_id} has been edited.")
+            print(f"Doctor whose ID is {doctor_id} has been edited.")
         else:
             print("Can't find the doctor with the same ID in the system.")
 
@@ -281,7 +281,7 @@ class Management:
             choice = input(">>> ")
             # Displays the enter list of doctors
             if choice == "1":
-                self.doctors_manager.display_doctors_list()
+                self.doctor_manager.display_doctors_list()
             # Displays the information of the specific chosen doctor by ID
             elif choice == "2":
                 doctor_id = int(input("Enter the doctor's ID: ")) # Converting to interger to avoid confusing the computer
