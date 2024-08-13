@@ -81,6 +81,20 @@ class Doctor:
         self.working_time = working_time
         self.qualification = qualification
         self.room_number = room_number
+    
+    # Getter and Setter for Doctor's Name
+    def get_name(self):
+        return self.name
+    def set_name(self,value):
+        self.name = value  
+
+    # Getter and Setter for Doctor's specialization
+
+    # Getter and Setter for Doctor's working time
+
+    # Getter and Setter for Doctor's qualification
+
+    # Getter and Setter for Doctor's room number
 
 class DoctorManager:
 
