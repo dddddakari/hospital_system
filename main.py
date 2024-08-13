@@ -212,12 +212,20 @@ class PatientManager:
     def __init__(self):
         self.patients = {id: Patient(id, **info) for id, info in patients.items()}
 
-    # Display the list of patients
+     # Display the list of patients
     def display_patients_list(self):
-        print("ID   NAME               DISEASE          GENDER           AGE")
+        print("ID    NAME           DISEASE          GENDER          AGE")
         for patient in self.patients.values():
             print(str(patient))
+
     # Searching for a patient by ID and showing their details
+    def search_patient_by_id(self, patient_id):
+        patient = self.patients.get(patient_id)
+        if patient: 
+            print("ID    NAME           DISEASE          GENDER          AGE")
+            print(str(patient))
+        else:
+            print("Can't find the patient with the same ID in the system.")
 
     # Adding a new patient
 
@@ -299,6 +307,8 @@ class Management:
             if choice == "1":
                 self.patients_manager.display_patients_list()
             elif choice == "2":
+                patient_id = int(input("Enter the patient ID: "))
+                self.patients_manager.search_patient_by_id(patient_id)
             elif choice == "3":
             elif choice == "4":
             elif choice == "5":

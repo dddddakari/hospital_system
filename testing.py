@@ -72,7 +72,7 @@ class PatientManager:
 
     # Display the list of patients
     def display_patients_list(self):
-        print("ID    NAME           DISEASE          GENDER          AGE")
+        print("ID    NAME           DISEASE          GENDER         AGE")
         for patient in self.patients.values():
             print(str(patient))
 
