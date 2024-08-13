@@ -1,3 +1,4 @@
+# Setting Doctor Dictionary
 doctors = {
     21: {
         "name": "Dr.Gody",
@@ -42,7 +43,7 @@ doctors = {
         "room_number": 2
     }
 }
-
+# Setting Patient Dictionary
 patients = {
     12: {
         "name": "Pankaj",
@@ -69,3 +70,14 @@ patients = {
         "age": 65
     }
 }
+
+
+class Doctor:
+
+class DoctorManager:
+
+class Patient:
+    
+class PatientManager:
+
+class Management:
