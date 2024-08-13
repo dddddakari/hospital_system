@@ -107,6 +107,12 @@ class Doctor:
         self.qualification = value
 
     # Getter and Setter for Doctor's room number
+    def get_room_number(self):
+        self.room_number
+    def set_room_number(self, value):
+        self.room_number= value
+
+    #The final "string" self
 
 class DoctorManager:
 
