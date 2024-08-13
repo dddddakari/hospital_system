@@ -56,16 +56,12 @@ doctors = {
     }
 }
 
-class DoctorManager:
-    def __init__(self):
-        self.doctors = {id: Doctor(id, **info) for id, info in doctors.items()}
-
-    def display_doctors_list(self):
-        print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER")
-        for doctor in self.doctors.values():
-            print(str(doctor))
-
+class Management:
+    def doctors_menu(self):
+        print("\n Doctors Menu: \n 1- Display Doctors List \n 2 - Search for doctor by ID \n 3 - Search for doctor by name \n 4 - Add doctor \n 5 - Edit doctor info \n 6 - Back to the Main Menu  ")
+        choice = input(">>> ")
+    
 # Testing the DoctorManager class
 if __name__ == "__main__":
-    manager = DoctorManager()
-    manager.display_doctors_list()
+    manager = Management()
+    manager.doctors_menu()

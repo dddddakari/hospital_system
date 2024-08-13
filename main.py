@@ -123,18 +123,28 @@ class DoctorManager:
 
     # Displaying The List of Doctors
     def display_doctors_list(self):
-        print("\n ID     NAME               SPECIALITY               TIMING            QUALIFICATION               ROOM NUMBER")
-        for doctor in self.doctors.valuse():
+        print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER")
+        for doctor in self.doctors.values():
             print(str(doctor))
-
     
     # Searching The Doctor THENNN displaying their details
-    # Search for a doctor by name then display their details
-    # Adding a new doctor
-    # Editing an existing doctor
+        # COME BACK TO THIS
+    def search_doctor_by_id(self, doctor_id):
 
+    # Search for a doctor by name then display their details
+    def search_doctor_by_name(self, name):
+
+    # Adding a new doctor
+    def add_doctor():
+    # Editing an existing doctor
+    def edit_doctor():
+        
 # class Patient:
     
 # class PatientManager:
 
-# class Management:
+class Management:
+
+    def doctors_menu(self):
+        print("\n Doctors Menu: \n 1- Display Doctors List \n 2 - Search for doctor by ID \n 3 - Search for doctor by name \n 4 - Add doctor \n 5 - Edit doctor info \n 6 - Back to the Main Menu  ")
+        choice = input(">>> ")
