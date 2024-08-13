@@ -57,11 +57,16 @@ doctors = {
 }
 
 class Management:
+    def display_menu(self):
+        print("Welcome to Alberta Hospital (AH) Management system \n Select from the following options, or select 3 to stop: \n 1 -     Doctors \n 2 -     Patients \n 3 -     Exit Program \n")
+        choice = input(">>> ")
+
     def doctors_menu(self):
-        print("\n Doctors Menu: \n 1- Display Doctors List \n 2 - Search for doctor by ID \n 3 - Search for doctor by name \n 4 - Add doctor \n 5 - Edit doctor info \n 6 - Back to the Main Menu  ")
+        print(f"\n Doctors Menu: \n 1-  Display Doctors List \n 2 - Search for doctor by ID \n 3 - Search for doctor by name \n 4 - Add doctor \n 5 - Edit doctor info \n 6 - Back to the Main Menu  ")
         choice = input(">>> ")
     
 # Testing the DoctorManager class
 if __name__ == "__main__":
     manager = Management()
-    manager.doctors_menu()
+    manager.display_menu()
+ 
