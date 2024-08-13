@@ -1,11 +1,11 @@
 # Setting Doctor Dictionary
 doctors = {
     21: {
-        "name": "Dr.Gody",
-        "specialization": "ENT",
-        "working_time": "5am-11am",
-        "qualification": "MBBS,MD",
-        "room_number": 17
+        "name": "Dr.Gody",                 #  DR NAME
+        "specialization": "ENT",           #  DR SPECIALIZATION
+        "working_time": "5am-11am",        #  DR WORKING HOURS
+        "qualification": "MBBS,MD",        #  DR QUALIFICATIONS
+        "room_number": 17                  #  DR ROOM NUMBER @ HOSPITAL
     },
     32: {
         "name": "Dr.Vikram",
@@ -46,10 +46,10 @@ doctors = {
 # Setting Patient Dictionary
 patients = {
     12: {
-        "name": "Pankaj",
-        "disease": "Cancer",
-        "gender": "Male",
-        "age": 30
+        "name": "Pankaj",                       #  PATIENT NAME
+        "disease": "Cancer",                    #  PATIENT DISEASE
+        "gender": "Male",                       #  PATIENT GENDER
+        "age": 30                               #  PATIENT AGE
     },
     13: {
         "name": "Sumit",
@@ -73,6 +73,9 @@ patients = {
 
 
 class Doctor:
+    # Initializing a doctor with the attributes mentioned in Dict
+    def __init__(self) -> None:
+        pass
 
 class DoctorManager:
 
