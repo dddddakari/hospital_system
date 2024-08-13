@@ -158,7 +158,17 @@ class DoctorManager:
             self.doctors[doctor_id] = Doctor(doctor_id, name, specialization, working_time, qualification,room_number)
             print("Doctor whose ID is {doctor_id} has been added.")
     # Editing an existing doctor
-    def edit_doctor():
+    def edit_doctor(self, doctor_id, name, specialization, working_time, qualification, room_number):
+        doctor = self.doctors.get(doctor_id)
+        if doctor:
+            doctor.set_name(name)
+            doctor.set_specialization(specialization)
+            doctor.set_working_time(working_time)
+            doctor.set_qualification(qualification)
+            doctor.set_room_number(room_number)
+            print("Doctor whose ID is {doctor_id} has been edited.")
+        else:
+            print("Can't find the doctor with the same ID in the system.")
 
 # class Patient:
     
@@ -207,6 +217,13 @@ class Management:
             self.doctor_manager.add_doctor(doctor_id, name, specialization, working_time, qualification,room_number)
         # Asks which doctor you'd like to edit, then asks you everything you'd like to edit 
         elif choice == "5":
+            doctor_id = int(input("Please enter the ID of the doctor you want to edit: "))
+            name = input("Enter new Name: ")
+            specialization = input("Enter new Specialty: ")
+            working_time = input("Enter new Timing: ")
+            qualification = input("Enter new Qualification: ")
+            room_number = int(input("Enter new Room Number: "))
+            self.doctor_manager.edit_doctor(doctor_id, name, specialization, working_time, qualification, room_number)
             
         #
         elif choice == "6":
