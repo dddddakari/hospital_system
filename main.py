@@ -113,6 +113,8 @@ class Doctor:
         self.room_number= value
 
     #The final "string" self
+    def __str__(self);
+        return f"{self.doctor_id}, {self.get_name()}, {self.get_specialization()}, {self.get_working_time()}, {self.get_qualification()}, {self.get_room_number()}"
 
 class DoctorManager:
 
