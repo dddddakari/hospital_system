@@ -67,7 +67,6 @@ ID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMB
  Enter the doctor's ID: 20
 Can't find the doctor with the same ID in the system.
 
-
  Doctors Menu:
  1- Display Doctors List
  2 - Search for doctor by ID
@@ -94,9 +93,9 @@ Enter the doctor's name: Dr. Smith
 Enter the doctor's specility: Heart
 Enter the doctor's timing (e.g., 7am-10pm):6am-11am
 Enter the doctor's qualification:PHD
-Enter the doctor's room number: 
-12
-Doctor whose ID is 62 has been added.
+Enter the doctor's room number: 12
+
+ Doctor whose ID is 62 has been added.
 
  Doctors Menu:
  1- Display Doctors List
@@ -108,13 +107,13 @@ Doctor whose ID is 62 has been added.
 >>> 5
 
  Please enter the ID of the doctor you want to edit: 66
-Enter new Name: Dr. Mike kale
+Enter new Name: Dr Mike Kale 
 Enter new Specialty: Heart
 Enter new Timing: 9am-3pm
 Enter new Qualification: MS
-Enter new Room Number: 
-2
-Doctor whose ID is 66 has been edited.
+Enter new Room Number: 2
+
+ Doctor whose ID is 66 has been edited.
 
  Doctors Menu:
  1- Display Doctors List
@@ -138,7 +137,6 @@ Doctor whose ID is 66 has been edited.
  3 - Add patient
  4 - Edit patient info
  5 - Back to the Main Menu
-
 >>> 1
 ID    NAME           DISEASE          GENDER          AGE
 12    Pankaj          Cancer          Male            30
@@ -152,7 +150,6 @@ ID    NAME           DISEASE          GENDER          AGE
  3 - Add patient
  4 - Edit patient info
  5 - Back to the Main Menu
-
 >>> 2
 Enter the patient ID: 16
 Can't find the patient with the same ID in the system.
@@ -163,7 +160,6 @@ Can't find the patient with the same ID in the system.
  3 - Add patient
  4 - Edit patient info
  5 - Back to the Main Menu
-
 >>> 2
 Enter the patient ID: 15
 ID    NAME           DISEASE          GENDER          AGE
@@ -175,14 +171,15 @@ ID    NAME           DISEASE          GENDER          AGE
  3 - Add patient
  4 - Edit patient info
  5 - Back to the Main Menu
-
 >>> 3
 Enter the patient's ID: 16
 Enter the Patient's name: Mary
 Enter the patient's disease: Cancer
 Enter the Patient's Gender: Female
 Enter the Patient's Age: 55
+
 Patient whose ID is 16 has been added.
+
 
  Patients Menu
  1 - Display Patients list
@@ -190,14 +187,15 @@ Patient whose ID is 16 has been added.
  3 - Add patient
  4 - Edit patient info
  5 - Back to the Main Menu
-
 >>> 4
 Please enter the ID of the patient you want to edit: 13
 Enter New name: Janina
 Enter New disease: Cold&Flue
 Enter New Gender: Female
 Enter New Age: 23
+
 Patient whose ID is 13 has been edited.
+
 
  Patients Menu
  1 - Display Patients list
@@ -205,7 +203,6 @@ Patient whose ID is 13 has been edited.
  3 - Add patient
  4 - Edit patient info
  5 - Back to the Main Menu
-
 >>> 1
 ID    NAME           DISEASE          GENDER          AGE
 12    Pankaj          Cancer          Male            30
@@ -220,7 +217,6 @@ ID    NAME           DISEASE          GENDER          AGE
  3 - Add patient
  4 - Edit patient info
  5 - Back to the Main Menu
-
 >>> 5
 
  Welcome to Alberta Hospital (AH) Management system
@@ -230,4 +226,4 @@ ID    NAME           DISEASE          GENDER          AGE
  3 - Exit Program
 >>> 3
 Thanks for using the program. Bye!
-PS C:\Users\icogn\Documents\GitHub\finalproject>
+PS C:\Users\icogn\Documents\GitHub\finalproject> 
