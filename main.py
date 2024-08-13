@@ -213,6 +213,7 @@ class PatientManager:
         self.patients = {id: Patient(id, **info) for id, info in patients.items()}
 
     # Display the list of patients
+    
 
     # Searching for a patient by ID and showing their details
 
@@ -232,13 +233,13 @@ class Management:
         choice = input(">>> ")
 
         # This leads to the DOCTORS Menu
-        if choice =='1':
+        if choice =="1":
             self.doctors_menu()
 
-        elif choice == '2':
+        elif choice == "2":
             self.patients_menu()
         # This ends the program
-        elif choice == '3':
+        elif choice == "3":
             print("Thanks for using the program. Bye!")
 
         # This is a fail safe incase the user doesn't enter one of the three choices
@@ -289,6 +290,17 @@ class Management:
                 print("Invalid choice, please choose from 1 to 6!")
 
     
-    
     def patients_menu(self):
         while True:
+            print("Patients Menu \n 1 - Display Patients list \n 2 - Search for patient by ID \n 3 - Add patient \n 4 - Edit patient info \n 5 - Back to the Main Menu \n")
+            choice = input(">>>")
+            if choice == "1":
+            elif choice == "2":
+            elif choice == "3":
+            elif choice == "4":
+            elif choice == "5":
+            else:
+                print("Invalid Choice, Please choose from 1 to 5")
+
+
+        
