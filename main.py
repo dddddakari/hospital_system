@@ -139,6 +139,16 @@ class DoctorManager:
 
     # Search for a doctor by name then display their details
     def search_doctor_by_name(self, name):
+        # As to make sure the results are searched and displayed otherwise
+        found = False
+        print("\nID     NAME            SPECIALITY      TIMING          QUALIFICATION   ROOM NUMBER")
+        # Searching through the dictionary values for the specific name
+        for doctor in self.doctors.values():
+            if doctor.get_name() == name:
+                print(str(doctor))
+                found = True
+        if not found:
+            print("Can't find the doctor with the same name in the system.")
 
     # Adding a new doctor
     def add_doctor():
@@ -180,8 +190,8 @@ class Management:
         # Displays the information of a specific chosen doctor by name
         elif choice == "3":
             name = input("Please enter the doctor's name: ")
-            self.doctor_manager.search_doctor_by_na
-        #
+            self.doctor_manager.search_doctor_by_name(name)
+        # Asks for new doctor's information
         elif choice == "4":
         #
         elif choice == "5":
